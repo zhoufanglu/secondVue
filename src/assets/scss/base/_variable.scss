@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*------------------------------- zindex --------------------------------*/
+$tip_zindex:40;
+$mask_zindex:30;
+$nav_zindex:10;//导航条
+$input_hidden_zindex:5;//上传照片
+$panel_nodata_zindex:2;//无数据的遮盖
+/*------------------------------- 宽高 S --------------------------------*/
+$ipad_width:51.2rem;
+$ipad_height:38.4rem;
+$content_width:49rem;
+//表单 
+$input_height: 1.8rem;
+$button_block_height: 1.8rem;
+$button_height: 1.5rem;
+$valid_height: 1.2rem;
+//导航条
+$nav_height:3rem;
+//页脚
+$foot_height:3rem;
+//弹窗
+$mask_width:20rem;
+/*------------------------------- 宽高 E --------------------------------*/

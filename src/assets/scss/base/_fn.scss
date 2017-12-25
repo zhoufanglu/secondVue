@@ -1,0 +1,43 @@
+@charset "UTF-8";
+//常用功能样式
+.fn-text-center{text-align:center !important;}
+.fn-text-right{text-align:right !important;}
+.fn-text-left{text-align:left !important;}
+.fn-color-theme{color:$theme !important;}
+.fn-color-calm{color:$calm !important;}
+.fn-color-black{color:$black !important;}
+.fn-color-dark{color:$dark !important;}
+.fn-color-warning{color:$warning !important;}
+.fn-color-danger{color:$danger !important;}
+.fn-color-stable{color:$stable !important;}
+.fn-color-light{color:$light !important;}
+.fn-bg-white{background-color:$white !important;}
+.fn-bg-warning{background-color:$warning !important;}
+.fn-bg-danger{background-color:$danger !important;}
+.fn-bg-stable{background-color:$stable !important;}
+.fn-bg-theme{background-color:$theme !important;}
+
+.fn-underline{text-decoration:underline;}
+.fn-bold{font-weight:bold;}
+
+//清理浮动
+.fn-clear:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.fn-clear{zoom:1; /* for IE6 IE7 */}
+
+//隐藏, 通常用来与 JS 配合
+.fn-hide {display:none !important;}
+.fn-show{display:block !important;}
+//设置内联, 减少浮动带来的bug
+.fn-left,.fn-right {display:inline;}
+.fn-left{float:left;}
+.fn-right{float:right;}
+
+//单行文字溢出时出现省略号，需设定宽度
+.fn-text-overflow {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+//chrome 下字体过小的问题
+.fn-webkit-adjust {-webkit-text-size-adjust: none;}
+
+//禁止选中元素
+.fn-no-select{-moz-user-select: none;-o-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;}
+

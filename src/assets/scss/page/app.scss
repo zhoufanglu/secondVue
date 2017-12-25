@@ -1,0 +1,32 @@
+@import "../style";
+#app {
+  .top-nav{
+    background-color: $theme;
+    height: 60px;
+    line-height: 60px;
+    color: $white;
+    vertical-align: middle;
+    .logo{
+      width: 100px;
+      height: 60px;
+      display: inline-block;
+      background-image: url("/src/assets/image/logo.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      vertical-align: middle;
+    }
+    .title-item{
+      display: inline-block;
+      vertical-align: middle;
+      a{
+        display: inline-block;
+        padding: 0 20px;
+        height: 60px;
+        &:hover{
+          background-color: $white;
+          color: $theme;
+        }
+      }
+    }
+  }
+}
