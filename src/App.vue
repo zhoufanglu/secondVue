@@ -18,14 +18,18 @@
       </div>
     </div>
     <router-view></router-view>
+    <loading id="loading"></loading>
   </div>
 </template>
 
 <script>
   import '@/assets/scss/page/app.scss'
+  import Loading from '@/components/common/loading.vue'
   export default {
     name: 'app',
-    components: {},
+    components: {
+      Loading
+    },
     data() {
       return {
 
@@ -38,4 +42,6 @@
     }
   }
 </script>
+<style scoped>
 
+</style>

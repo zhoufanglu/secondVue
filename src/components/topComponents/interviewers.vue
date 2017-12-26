@@ -8,6 +8,7 @@
             <th class="fn-no-select" v-else @click="numberSort('desc')">手机编号↓</th>
             <th>序号</th>
             <th>手机名字</th>
+            <th>操作</th>
           </tr>
         </thead>
         <tbody>
@@ -15,6 +16,10 @@
             <td>{{phone[1]}}</td>
             <td>{{index + 1}}</td>
             <td>{{phone[0]}}</td>
+            <td>
+              <span>编辑</span>
+              <span>删除</span>
+            </td>
           </tr>
         </tbody>
       </table>
