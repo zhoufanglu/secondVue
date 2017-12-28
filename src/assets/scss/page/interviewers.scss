@@ -22,16 +22,6 @@
       }
       td:last-child{
         text-align: center;
-        span{
-          cursor: pointer;
-          color: $theme;
-          &:hover{
-            color: $danger;
-          }
-        }
-        span:last-child{
-          margin-left: 16px;
-        }
       }
     }
   }

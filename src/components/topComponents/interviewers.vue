@@ -1,7 +1,7 @@
 <template>
   <div id="interviewers">
     <div class="p-interview-table">
-      <table>
+      <table >
         <thead>
           <tr>
             <th class="fn-no-select" v-if="showNumber" @click="numberSort('asce')">手机编号↑</th>
@@ -17,13 +17,16 @@
             <td>{{index + 1}}</td>
             <td>{{phone[0]}}</td>
             <td>
-              <span>编辑</span>
-              <span>删除</span>
+              <el-button type="primary" >编辑</el-button>
+              <el-button type="danger" >编辑</el-button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+    <!--加载框-S-->
+    <loading v-if="false"></loading>
+    <!--加载框-E-->
   </div>
 </template>
 <script>
@@ -33,13 +36,16 @@
         data(){
           return {
             phoneList:[],
-            showNumber:true
+            showNumber:true,
           }
         },
         mounted(){
+          console.log(41);
+          //this.$parent.$data.isLoading = true;
           this.$http.get('/sug/sug?code=utf-8&q=%E6%89%8B%E6%9C%BA')
             .then( response => {
               this.phoneList = response.data.result;
+              //this.$parent.$data.isLoading = false;
             })
             .catch( err => {
               console.log(err);

@@ -18,24 +18,26 @@
       </div>
     </div>
     <router-view></router-view>
-    <loading id="loading"></loading>
   </div>
 </template>
 
 <script>
-  import '@/assets/scss/page/app.scss'
-  import Loading from '@/components/common/loading.vue'
+  import '@/assets/scss/page/app.scss';
   export default {
     name: 'app',
     components: {
-      Loading
+
+    },
+    created(){
+
     },
     data() {
       return {
-
+        isLoading:false
       }
     },
-    created(){
+    mounted(){
+
     },
     methods: {
 

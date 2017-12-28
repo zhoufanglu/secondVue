@@ -1,11 +1,15 @@
 <template>
   <div id="loading">
     <img src="/src/assets/image/loading.gif">
+    <div>加载中</div>
   </div>
 </template>
 <script>
   export default {
-    name: 'loading'
+    name: 'loading',
+    mounted(){
+
+    }
   }
 </script>
 <style scoped>
@@ -19,7 +23,6 @@
     /*display: table-cell;*/
     vertical-align: middle;
     text-align: center;
-    display: none;
   }
   #loading img{
     margin-top: 30rem!important;
