@@ -2,17 +2,17 @@
   <div id="app">
     <div class="top-nav">
       <span class="logo"></span>
-      <div class="title-item">
-        <span>
+      <div class="title-left-panel">
+        <span class="title-item">
           <router-link to="/project">项目</router-link>
         </span>
-        <span>
-          <router-link to="/scoreCharts">评分表</router-link>
+        <span class="title-item">
+          <router-link to="/scoreCharts" active>评分表</router-link>
         </span>
-        <span>
+        <span class="title-item">
           <router-link to="/papers">试题</router-link>
         </span>
-        <span>
+        <span class="title-item">
           <router-link to="/interviewers">面试官</router-link>
         </span>
       </div>
@@ -33,11 +33,8 @@
     },
     data() {
       return {
-        isLoading:false
+        radio3: '上海',
       }
-    },
-    mounted(){
-
     },
     methods: {
 

@@ -1,28 +1,13 @@
 @import "../style";
 #interviewers{
   padding: 30px;
-  table{
-    margin: 0 auto;
-    tr{
-      th:first-child{
-        cursor: pointer;
-        color: $theme;
-        text-align: left;
-      }
-      th{
-        width: 300px;
-        text-align: left;
-      }
-      th:last-child{
-        text-align: center;
-      }
-      td{
-        text-align: left;
-        padding: 6px;
-      }
-      td:last-child{
-        text-align: center;
-      }
-    }
+  .p-switch-btn{
+    float: right;
+    margin-right: 10%;
   }
+}
+//element-out-table
+.p-phone-table{
+  width: 80%;
+  margin: 0 auto;
 }

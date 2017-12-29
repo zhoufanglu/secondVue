@@ -9,11 +9,12 @@ import axios from 'axios';//axios ajax
 
 import axiosInterceptor from '@/assets/js/axiosInterceptor.js';//拦截器
 /**
- * ui组件
+ * ui组件-element
  */
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(ElementUI)
+import '@/assets/scss/base/element-variables.scss'
+Vue.use(ElementUI);
 
 //import Loading from '@/components/common/loading.vue';//loading全局组件
 /*Vue.component("loading",Loading);*/

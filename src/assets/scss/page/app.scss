@@ -15,9 +15,17 @@
       background-position: center center;
       vertical-align: middle;
     }
-    .title-item{
+    .title-left-panel{
       display: inline-block;
-      vertical-align: middle;
+      margin-left: 40px;
+      .router-link-active{
+        background-color: $white;
+        color: $theme;
+      }
+      .title-item{
+        display: inline-block;
+        margin-left: -10px;
+      }
       a{
         display: inline-block;
         padding: 0 20px;

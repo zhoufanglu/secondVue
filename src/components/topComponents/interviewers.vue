@@ -1,32 +1,20 @@
 <template>
   <div id="interviewers">
-    <div class="p-interview-table">
-      <table >
-        <thead>
-          <tr>
-            <th class="fn-no-select" v-if="showNumber" @click="numberSort('asce')">手机编号↑</th>
-            <th class="fn-no-select" v-else @click="numberSort('desc')">手机编号↓</th>
-            <th>序号</th>
-            <th>手机名字</th>
-            <th>操作</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(phone,index) in phoneList">
-            <td>{{phone[1]}}</td>
-            <td>{{index + 1}}</td>
-            <td>{{phone[0]}}</td>
-            <td>
-              <el-button type="primary" >编辑</el-button>
-              <el-button type="danger" >编辑</el-button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <el-switch class="p-switch-btn" v-model="switchValue" active-text="启用操作" inactive-text="禁用操作">123</el-switch>
+    <div class="p-phone-table">
+      <el-table :data="list"  size="medium " >
+        <el-table-column type="index" width="50"></el-table-column>
+        <el-table-column label="序号" prop=""></el-table-column>
+        <el-table-column label="编号" prop="number" :data="0"></el-table-column>
+        <el-table-column label="名称" prop="name" :data="1"></el-table-column>
+        <el-table-column label="操作">
+          <template slot-scope="scope">
+            <el-button :disabled="!switchValue" @click="editClick(scope.row)" class="table-btn" type="text" size="small">编辑</el-button>
+            <el-button :disabled="!switchValue" @click="delClick(scope.row)"class="table-btn" type="text" size="small">删除</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
     </div>
-    <!--加载框-S-->
-    <loading v-if="false"></loading>
-    <!--加载框-E-->
   </div>
 </template>
 <script>
@@ -35,35 +23,76 @@
         name: 'interviewers',
         data(){
           return {
-            phoneList:[],
+            list:[],
             showNumber:true,
+            switchValue: true
           }
         },
         mounted(){
-          console.log(41);
           //this.$parent.$data.isLoading = true;
           this.$http.get('/sug/sug?code=utf-8&q=%E6%89%8B%E6%9C%BA')
             .then( response => {
-              this.phoneList = response.data.result;
-              //this.$parent.$data.isLoading = false;
+              let list = response.data.result;
+              let listJson = [];
+              for(let i in list){
+                let jsonItem = {
+                  name:list[i][0],
+                  number:list[i][1]
+                }
+                listJson.push(jsonItem);
+              }
+              this.list = listJson;
             })
             .catch( err => {
               console.log(err);
             });
         },
         methods:{
-          numberSort(orderType){ //根据编号排序
-            this.showNumber = !this.showNumber;
-            let arr = this.phoneList;
-            if(orderType == 'asce'){
-              arr.sort(function(x, y){
-                return y[1] - x[1];
+          editClick(row){
+            console.log(94,row);
+
+          },
+          delClick(row){
+            console.log(85,row.number);
+            const h = this.$createElement;
+            this.$msgbox({
+              title: '消息',
+              message: h('p', null, [
+                h('span', null, '确定要删除吗？ '),
+                /*h('i', { style: 'color: teal' }, '确定要删除吗？')*/
+              ]),
+              showCancelButton: true,
+              confirmButtonText: '确定',
+              cancelButtonText: '取消',
+              beforeClose: (action, instance, done) => {
+                if (action === 'confirm') {
+                  instance.confirmButtonLoading = true;
+                  instance.confirmButtonText = '删除中...';
+                  console.log(this.list);
+                  for(let i in this.list){
+                    if(row.number == this.list[i].number){
+                      this.list.splice(i,1);
+                    }
+                  }
+                  instance.confirmButtonLoading = false;
+                  done();
+                  /*setTimeout(() => {
+                    done();
+                    setTimeout(() => {
+                      instance.confirmButtonLoading = false;
+                    }, 300);
+                  }, 3000);*/
+                } else {
+                  console.log('aaa');
+                  done();
+                }
+              }
+            }).then(action => {
+              this.$message({
+                type: 'success',
+                message: '删除成功'
               });
-            }else if(orderType == 'desc'){
-              arr.sort(function(x, y){
-                return x[1] - y[1];
-              });
-            }
+            });
           }
         }
     }
