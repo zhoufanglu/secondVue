@@ -1,0 +1,41 @@
+@import "../style";
+.p-container-first{
+  display: flex;
+  border: solid 1px $theme;
+  width: 30rem;
+  height: 30rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .p-item-row{
+    padding: 0 2rem;
+    display: flex;
+    @extend .f-justifyAndAlign-center;
+    width: 100%;
+    border: solid 1px red;
+    flex-direction: row;
+    >div{
+      width: 5rem;
+      justify-content: flex-start;
+    }
+  }
+  .p-fun-row{
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    border: solid green;
+    @extend .f-justifyAndAlign-center;
+    .el-input{
+      width: 10rem;
+    }
+  }
+  .p-title-row{
+    padding: 0 2rem;
+    display: flex;
+    @extend .f-justifyAndAlign-center;
+    width: 100%;
+    >span{
+      width: 5rem;
+      justify-content: flex-start;
+    }
+  }
+}

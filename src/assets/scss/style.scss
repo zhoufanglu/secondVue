@@ -3,3 +3,8 @@
 @import "base/normalize";
 @import "base/variable";
 @import "base/fn";
+//垂直水平居中-两端对齐
+.f-justifyAndAlign-center{
+  justify-content:space-between;
+  align-items: center;
+}

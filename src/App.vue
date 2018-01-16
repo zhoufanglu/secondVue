@@ -15,6 +15,9 @@
         <span class="title-item">
           <router-link to="/interviewers">面试官</router-link>
         </span>
+        <span class="title-item">
+          <router-link to="/flexStudy">flex</router-link>
+        </span>
       </div>
     </div>
     <router-view></router-view>

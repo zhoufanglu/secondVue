@@ -4,9 +4,10 @@ import project from '@/components/topComponents/project.vue'
 import scoreCharts from '@/components/topComponents/scoreCharts.vue'
 import papers from '@/components/topComponents/papers.vue'
 import interviewers from '@/components/topComponents/interviewers.vue'
+import flexStudy from '@/components/topComponents/flexStudy'
 import model_1 from '@/components/leftComponents/model_1'
 import model_2 from '@/components/leftComponents/model_2'
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -41,6 +42,11 @@ export default new Router({
       path: '/interviewers',
       name: 'interviewers',
       component: interviewers
+    },
+    {
+      path: '/flexStudy',
+      name: 'flexStudy',
+      component: flexStudy
     }
   ]
 })
