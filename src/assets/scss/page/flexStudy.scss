@@ -1,41 +1,52 @@
 @import "../style";
-.p-container-first{
+.p-container-father{
   display: flex;
-  border: solid 1px $theme;
-  width: 30rem;
-  height: 30rem;
-  flex-direction: row;
-  flex-wrap: wrap;
-  .p-item-row{
-    padding: 0 2rem;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+  height: 800px;
+  //第一块表格
+  .p-container-first{
     display: flex;
-    @extend .f-justifyAndAlign-center;
-    width: 100%;
-    border: solid 1px red;
+    border: solid 1px $theme;
+    width: 30rem;
+    height: 30rem;
     flex-direction: row;
-    >div{
-      width: 5rem;
-      justify-content: flex-start;
+    flex-wrap: wrap;
+    .p-item-row{
+      padding: 0 2rem;
+      display: flex;
+      @extend .f-justifyAndAlign-center;
+      width: 100%;
+      border: solid 1px red;
+      flex-direction: row;
+      >div{
+        justify-content: flex-start;
+        //word-break:keep-all;           /* 不换行 */
+        white-space:nowrap;
+        width: 100%;
+      }
     }
-  }
-  .p-fun-row{
-    width: 100%;
-    padding: 0 2rem;
-    display: flex;
-    border: solid green;
-    @extend .f-justifyAndAlign-center;
-    .el-input{
-      width: 10rem;
+    .p-fun-row{
+      width: 100%;
+      padding: 0 2rem;
+      display: flex;
+      border: solid green;
+      @extend .f-justifyAndAlign-center;
+      .el-input{
+        width: 10rem;
+      }
     }
-  }
-  .p-title-row{
-    padding: 0 2rem;
-    display: flex;
-    @extend .f-justifyAndAlign-center;
-    width: 100%;
-    >span{
-      width: 5rem;
-      justify-content: flex-start;
+    .p-title-row{
+      padding: 0 2rem;
+      display: flex;
+      @extend .f-justifyAndAlign-center;
+      width: 100%;
+      >span{
+        width: 100%;
+        justify-content: flex-start;
+      }
     }
   }
 }

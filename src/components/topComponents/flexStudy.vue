@@ -1,5 +1,6 @@
 <template>
-  <div id="flexStudy" class="p-container-first">
+  <div id="flexStudy" class="p-container-father">
+    <div class="p-container-first">
       <div class="p-fun-row">
         <el-input
           placeholder="请输入内容"
@@ -16,6 +17,7 @@
         <div>{{l.id}}</div>
         <div>{{l.name}}</div>
       </div>
+    </div>
   </div>
 </template>
 <script>
