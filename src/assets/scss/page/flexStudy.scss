@@ -2,50 +2,74 @@
 .p-container-father{
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
   border: solid black 1px;
-  height: 800px;
+  padding: 2rem;
   //第一块表格
   .p-container-first{
     display: flex;
     border: solid 1px $theme;
     width: 30rem;
-    height: 30rem;
+    min-height: 20rem;
+    height:100%;
     flex-direction: row;
     flex-wrap: wrap;
-    .p-item-row{
-      padding: 0 2rem;
-      display: flex;
-      @extend .f-justifyAndAlign-center;
-      width: 100%;
-      border: solid 1px red;
-      flex-direction: row;
-      >div{
-        justify-content: flex-start;
-        //word-break:keep-all;           /* 不换行 */
-        white-space:nowrap;
-        width: 100%;
-      }
-    }
+    //功能行
     .p-fun-row{
       width: 100%;
-      padding: 0 2rem;
+      padding: 1rem 2rem;
+      height: 4rem;
+      border-bottom: solid 1px $theme;
       display: flex;
-      border: solid green;
       @extend .f-justifyAndAlign-center;
       .el-input{
         width: 10rem;
       }
     }
-    .p-title-row{
-      padding: 0 2rem;
+    //表身
+    .p-body-container{
       display: flex;
-      @extend .f-justifyAndAlign-center;
+      flex-direction: column;
       width: 100%;
-      >span{
+      height: 100%;
+      //标题行
+      .p-title-row{
+        border-bottom: solid 1px $theme;
+        padding: 1rem 2rem;
+        display: flex;
+        font-weight: bolder;
+        @extend .f-justifyAndAlign-center;
         width: 100%;
-        justify-content: flex-start;
+        >span{
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+      //内容行
+      .p-item-row{
+        display: flex;
+        padding: 1rem 2rem;
+        //@extend .f-justifyAndAlign-center;
+        width: 100%;
+        border-bottom: solid 1px $stable;
+        flex-direction: row;
+        >div{
+          justify-content: flex-start;
+          white-space:nowrap;
+          width: 100%;
+        }
+      }
+      .p-item-row:last-child{
+        border: none;
+      }
+    }
+    .p-body-noData{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      span{
       }
     }
   }

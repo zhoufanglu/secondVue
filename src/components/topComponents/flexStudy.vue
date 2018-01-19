@@ -1,6 +1,7 @@
 <template>
   <div id="flexStudy" class="p-container-father">
     <div class="p-container-first">
+
       <div class="p-fun-row">
         <el-input
           placeholder="请输入内容"
@@ -9,14 +10,21 @@
         </el-input>
         <el-button type="primary" @click="oneSearch()" round>搜索</el-button>
       </div>
-      <div class="p-title-row">
-        <span>编号</span>
-        <span>名称</span>
+
+      <div class="p-body-container" v-show="!isShowNoDataBody">
+        <div class="p-title-row">
+          <span>编号</span>
+          <span>名称</span>
+        </div>
+        <div v-for="l in list" class="p-item-row">
+          <div>{{l.id}}</div>
+          <div>{{l.name}}</div>
+        </div>
       </div>
-      <div v-for="l in list" class="p-item-row">
-        <div>{{l.id}}</div>
-        <div>{{l.name}}</div>
+      <div class="p-body-noData" v-show="isShowNoDataBody">
+         <span>没有数据</span>
       </div>
+
     </div>
   </div>
 </template>
@@ -27,7 +35,8 @@
         data(){
           return {
             list:[],
-            searchText:''
+            searchText:'',
+            isShowNoDataBody:true
           }
         },
         created(){
@@ -54,6 +63,11 @@
                 }
                 list = goods;
                 this.list = list;
+                if(!list.length){
+                  this.isShowNoDataBody = true;
+                }else {
+                  this.isShowNoDataBody = false;
+                }
                 console.log(47, list);
               })
               .catch( err => {
