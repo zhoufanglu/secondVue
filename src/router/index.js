@@ -41,7 +41,10 @@ export default new Router({
     {
       path: '/interviewers',
       name: 'interviewers',
-      component: interviewers
+      component: interviewers,
+      meta:{
+        keepAlive:true
+      }
     },
     {
       path: '/flexStudy',

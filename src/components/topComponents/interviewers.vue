@@ -38,7 +38,7 @@
                 let jsonItem = {
                   name:list[i][0],
                   number:list[i][1]
-                }
+                };
                 listJson.push(jsonItem);
               }
               this.list = listJson;

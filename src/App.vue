@@ -13,14 +13,16 @@
           <router-link to="/papers">试题</router-link>
         </span>
         <span class="title-item">
-          <router-link to="/interviewers">面试官</router-link>
+            <router-link to="/interviewers" >面试官</router-link>
         </span>
         <span class="title-item">
           <router-link to="/flexStudy">flex</router-link>
         </span>
       </div>
     </div>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
   </div>
 </template>
 

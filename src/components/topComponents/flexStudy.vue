@@ -1,5 +1,6 @@
 <template>
   <div id="flexStudy" class="p-container-father">
+    <!--first-->
     <div class="p-container-first">
 
       <div class="p-fun-row">
@@ -25,6 +26,34 @@
          <span>没有数据</span>
       </div>
 
+    </div>
+    <!--second-->
+    <div class="p-container-second f-test-borer">
+      <div class="p-second-panel">
+          <div class="f-test-border">
+          </div>
+          <div class="f-test-border">
+            <span>标题标题标题标题标题标题标题标题标题标题标题标题</span>
+            <span>1</span>
+            <span>1</span>
+          </div>
+      </div>
+
+      <div class="p-second-panel">
+        <div class="f-test-border">
+        </div>
+        <div class="f-test-border">
+          <span>标题标题标题标题标题标题标题标题标题标题标题标题</span>
+          <span>1</span>
+          <span>1</span>
+        </div>
+      </div>
+    </div>
+    <!--third-->
+    <div class="p-container-third f-test-border p-color">
+      <div><span title="aaaaa">one</span></div>
+      <div>2</div>
+      <div>3</div>
     </div>
   </div>
 </template>

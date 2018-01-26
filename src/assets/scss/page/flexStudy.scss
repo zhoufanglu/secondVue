@@ -2,10 +2,11 @@
 .p-container-father{
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
   border: solid black 1px;
   padding: 2rem;
-  //第一块表格
+  //第一块
   .p-container-first{
     display: flex;
     border: solid 1px $theme;
@@ -71,6 +72,61 @@
       align-content: center;
       span{
       }
+    }
+  }
+  //第二块
+  .p-container-second{
+    padding: 1rem 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    width: 500px;
+    .p-second-panel{
+      display: flex;
+      flex-direction: row;
+      >div:first-child{
+        border: solid 1px $stable;
+        width: 150px;
+        height:150px;
+        background: url("/src/assets/image/dogHead.jpg") no-repeat;
+        background-size: 100%;
+        flex: 1;
+      }
+      >div:last-child{
+        border: solid 1px $stable;
+        height:150px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        flex: 2;
+        padding: 10px;
+        span:first-child{
+          font-weight: bolder;
+          font-size: 20px;
+        }
+        span:nth-child(2){
+          color: $danger;
+        }
+        span:nth-child(3){
+          color: $stable;
+        }
+      }
+    }
+  }
+  //第三块
+  .p-container-third{
+    display: flex;
+    flex-flow: row wrap;
+    width: 600px;
+    height: 400px;
+    border: solid 1px $stable;
+    padding: 1rem;
+    justify-content: center;
+    align-content: center;
+    >div{
+      width: 500px;
+      height: 50px;
+      border: solid 1px $stable;
     }
   }
 }
