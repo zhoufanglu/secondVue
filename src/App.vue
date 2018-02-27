@@ -18,11 +18,15 @@
         <span class="title-item">
           <router-link to="/flexStudy">flex</router-link>
         </span>
+        <span class="title-item">
+          <router-link to="/es6">es6</router-link>
+        </span>
       </div>
     </div>
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
 </template>
 

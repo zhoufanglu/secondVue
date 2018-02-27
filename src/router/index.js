@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//top
 import project from '@/components/topComponents/project.vue'
 import scoreCharts from '@/components/topComponents/scoreCharts.vue'
 import papers from '@/components/topComponents/papers.vue'
 import interviewers from '@/components/topComponents/interviewers.vue'
 import flexStudy from '@/components/topComponents/flexStudy'
+import es6 from '@/components/topComponents/es6'
+//project child
 import model_1 from '@/components/leftComponents/model_1'
 import model_2 from '@/components/leftComponents/model_2'
 Vue.use(Router);
@@ -49,7 +52,15 @@ export default new Router({
     {
       path: '/flexStudy',
       name: 'flexStudy',
-      component: flexStudy
+      component: flexStudy,
+      meta:{
+        keepAlive:true
+      }
+    },
+    {
+      path: '/es6',
+      name: 'es6',
+      component: es6,
     }
   ]
 })
