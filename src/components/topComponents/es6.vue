@@ -1,5 +1,5 @@
 <template>
-  <div id="es6">
+  <div id="es6" class="p-border-round">
     <div>es6666</div>
   </div>
 </template>
@@ -51,5 +51,10 @@
     }
   }
 </script>
-<style>
+<style scope type="text/scss" lang="scss" >
+  @import "../../assets/scss/style";
+  .p-border-round{
+    border: solid 1px red;
+    @include border-round;
+  }
 </style>

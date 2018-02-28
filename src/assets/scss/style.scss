@@ -12,3 +12,9 @@
 .f-test-borer{
   border: solid 1px $stable;
 }
+//混合器
+@mixin border-round{
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
