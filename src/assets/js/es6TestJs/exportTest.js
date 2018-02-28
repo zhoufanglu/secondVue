@@ -1,2 +1,7 @@
 let a = 'a';
-export {a};
+let personObj = {
+  name: 'lfz',
+  age: '18',
+  sex: 'male',
+};
+export {a ,personObj};

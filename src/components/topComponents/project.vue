@@ -22,7 +22,7 @@
         name: 'project'
     }
 </script>
-<style scoped rel="stylesheet/scss" lang="scss">
+<style scoped type="text/scss" lang="scss">
   .project-left-nav{
     display: inline-block;
     width: 200px;
