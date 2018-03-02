@@ -18,3 +18,9 @@
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+@mixin link-colors($normal, $hover, $visited) {
+  cursor: pointer;
+  color: $normal;
+  &:hover { color: $hover; }
+  &:visited { color: $visited; }
+}

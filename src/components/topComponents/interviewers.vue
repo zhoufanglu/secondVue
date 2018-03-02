@@ -30,7 +30,7 @@
         },
         mounted(){
           //this.$parent.$data.isLoading = true;
-          this.$http.get('/sug/sug?code=utf-8&q=%E6%89%8B%E6%9C%BA')
+          /*this.$http.get('/sug/sug?code=utf-8&q=%E6%89%8B%E6%9C%BA')
             .then( response => {
               let list = response.data.result;
               let listJson = [];
@@ -45,6 +45,24 @@
             })
             .catch( err => {
               console.log(err);
+            });*/
+          var instance = this.$http.create({
+            headers: {'Content-Type': 'application/json'},
+            baseUrl:''
+          });
+          instance.post(
+            '/evaluation',
+            {
+            params:{
+              username:"180@ynnx.com",
+              password:"79031245"
+            }
+          })
+            .then(function (response) {
+              console.log(response)
+            })
+            .catch(function (error) {
+              console.log(error);
             });
         },
         methods:{
