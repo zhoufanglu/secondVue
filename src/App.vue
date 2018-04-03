@@ -21,6 +21,9 @@
         <span class="title-item">
           <router-link to="/es6">es6</router-link>
         </span>
+        <span class="title-item">
+          <span>userName:{{updateName}}</span>
+        </span>
       </div>
     </div>
     <keep-alive>
@@ -47,7 +50,13 @@
     },
     methods: {
 
-    }
+    },
+      computed:{
+          updateName(){
+              this.$store.commit('updateUser','7777');
+              return this.$store.state.userName;
+          }
+      }
   }
 </script>
 <style scoped>

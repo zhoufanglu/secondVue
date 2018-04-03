@@ -11,17 +11,17 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {// proxy all requests starting with /api to jsonplaceholder
-      '/': { // /sug
+      '/api': { // /sug
         /*target: 'https://suggest.taobao.com',*///设置你调用域名或者端口号,别忘了加http
         target: 'http://172.16.21.30:8000',//接口名称
         changeOrigin: true,//是否跨域
         pathRewrite: {
-          '^/': ''//api代替 target里面的内容 /需要rewrite重写的,
+          '^/api': ''//api代替 target里面的内容 /需要rewrite重写的,
         }
       }},
 
     // Various Dev Server settings
-    host: '172.16.21.19', // can be overwritten by process.env.HOST
+    host: '127.0.0.1', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,

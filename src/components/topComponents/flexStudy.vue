@@ -55,6 +55,10 @@
       <div>2</div>
       <div>3</div>
     </div>
+    <div class="">
+      <span>store test</span>
+      <button @click="storeAdd()">store+1</button>
+    </div>
   </div>
 </template>
 <script>
@@ -65,7 +69,8 @@
           return {
             list:[],
             searchText:'',
-            isShowNoDataBody:true
+            isShowNoDataBody:true,
+            num:10
           }
         },
         created(){
@@ -102,6 +107,14 @@
               .catch( err => {
                 console.log(err);
               });
+          },
+          storeAdd(){
+              /**
+               * store use
+               */
+              this.$store.commit('add',this.num);
+              console.log(70,this.$store.state.num);
+              this.num++;
           }
         }
     }

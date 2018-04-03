@@ -4,13 +4,10 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import axios from 'axios';//axios ajax
-
+import store from './store/index';
 // 引入mockjs
 import useMock from './mock.js'
 useMock(true);
-//引入vueX
-import Vuex from 'vuex'
-Vue.use(Vuex)
 
 import axiosInterceptor from '@/assets/js/axiosInterceptor.js';//拦截器
 /**
@@ -24,6 +21,7 @@ Vue.use(ElementUI);
 //import Loading from '@/components/common/loading.vue';//loading全局组件
 /*Vue.component("loading",Loading);*/
 Vue.prototype.$http = axios;
+Vue.prototype.$store =store;
 
 
 Vue.config.productionTip = false;
