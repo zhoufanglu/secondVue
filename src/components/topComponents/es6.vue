@@ -46,7 +46,20 @@
       (() => {
         console.log('自执行函数')
       })();
-
+      this.$http.post(
+          '/api/data',
+          {
+              params:{
+                  username:"180@ynnx.com",
+                  password:"79031245"
+              }
+          })
+          .then(function (data) {
+              console.log(58,data.data)
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
 
     }
   }

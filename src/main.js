@@ -5,7 +5,12 @@ import App from './App';
 import router from './router';
 import axios from 'axios';//axios ajax
 
-
+// 引入mockjs
+import useMock from './mock.js'
+useMock(true);
+//引入vueX
+import Vuex from 'vuex'
+Vue.use(Vuex)
 
 import axiosInterceptor from '@/assets/js/axiosInterceptor.js';//拦截器
 /**
