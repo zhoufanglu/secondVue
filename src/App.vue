@@ -22,8 +22,11 @@
           <router-link to="/es6">es6</router-link>
         </span>
         <span class="title-item">
-          <span>userName:{{updateName}}</span>
+          <router-link to="/componentSendData">component study</router-link>
         </span>
+        <!--<span class="title-item">
+          <span>userName:{{updateName}}</span>
+        </span>-->
       </div>
     </div>
     <keep-alive>

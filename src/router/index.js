@@ -7,6 +7,7 @@ import papers from '@/components/topComponents/papers.vue'
 import interviewers from '@/components/topComponents/interviewers.vue'
 import flexStudy from '@/components/topComponents/flexStudy'
 import es6 from '@/components/topComponents/es6'
+import componentSendData from '@/components/topComponents/componentSendData'
 //project child
 import model_1 from '@/components/leftComponents/model_1'
 import model_2 from '@/components/leftComponents/model_2'
@@ -61,6 +62,11 @@ export default new Router({
       path: '/es6',
       name: 'es6',
       component: es6,
-    }
+    },
+      {
+          path: '/componentSendData',
+          name:'componentSendData' ,
+          component:componentSendData
+      }
   ]
 })
