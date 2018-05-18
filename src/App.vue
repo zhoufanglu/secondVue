@@ -24,6 +24,9 @@
         <span class="title-item">
           <router-link to="/componentSendData">component study</router-link>
         </span>
+        <span class="title-item">
+          <router-link to="/count">count</router-link>
+        </span>
         <!--<span class="title-item">
           <span>userName:{{updateName}}</span>
         </span>-->
@@ -44,7 +47,13 @@
 
     },
     created(){
-
+        //在页面加载时读取localStorage里的状态信息
+        localStorage.getItem("vuex_store_second") && this.$store.replaceState(Object.assign(this.$store.state,JSON.parse(localStorage.getItem("vuex_store_second"))));
+        //在页面刷新时将vuex里的信息保存到localStorage里
+        window.addEventListener("beforeunload",()=>{
+            localStorage.setItem("vuex_store_second",JSON.stringify(this.$store.state))
+        });
+        //this.$router.push({path:'/home'})
     },
     data() {
       return {

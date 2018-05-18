@@ -11,6 +11,8 @@ import componentSendData from '@/components/topComponents/componentSendData'
 //project child
 import model_1 from '@/components/leftComponents/model_1'
 import model_2 from '@/components/leftComponents/model_2'
+
+import count from '@/components/count'
 Vue.use(Router);
 
 export default new Router({
@@ -63,10 +65,15 @@ export default new Router({
       name: 'es6',
       component: es6,
     },
-      {
-          path: '/componentSendData',
-          name:'componentSendData' ,
-          component:componentSendData
-      }
+    {
+        path: '/componentSendData',
+        name:'componentSendData' ,
+        component:componentSendData
+    },
+   {
+      path: '/count',
+      name: 'count',
+      component: count
+   }
   ]
 })

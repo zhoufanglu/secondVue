@@ -4,7 +4,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import axios from 'axios';//axios ajax
-import store from './store/index';
+import store from './vuex/store';
 // 引入mockjs
 import useMock from './mock.js'
 useMock(true);
@@ -34,6 +34,7 @@ new Vue({
 
   },
   router,
+  store,//vuex的store
   template: '<App/>',
   components: { App }
 });

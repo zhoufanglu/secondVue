@@ -110,7 +110,7 @@
           },
           storeAdd(){
               /**
-               * store use
+               * vuex use
                */
               this.$store.commit('add',this.num);
               console.log(70,this.$store.state.num);
