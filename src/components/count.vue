@@ -11,6 +11,11 @@
             <span>改变count内的值</span>
             <button @click="changeCount()">变为666</button>
         </div>
+        <div>-------------------Vue 数组/对象更新 视图不更新---------------</div>
+        <div v-for="(i,index) in arr" style="padding: 30px">
+            <span>{{i}}</span>
+        </div>
+        <div>{{obj.a}}+{{obj.b}}</div>
     </div>
 </template>
 <script>
@@ -19,11 +24,20 @@
         data(){
             return{
                 msg:'Hello Vuex',
-
+                arr: [1,2,3],
+                obj:{
+                    a: 1,
+                    b: 2
+                }
             }
         },
         created(){
-            //console.log(18,this.$store);
+            // 数据更新 对象视图不更新
+            this.arr[0] = 'A'
+            this.arr.length = 1
+            /*this.obj.c = 'OBKoro1';
+            delete this.obj.a;
+            console.log(this.obj);  // {b:2,c:'OBKoro1'}*/
 
         },
         methods:{

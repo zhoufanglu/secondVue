@@ -1,9 +1,16 @@
 <template>
   <div id="es6" class="p-border-round">
     <div class="title">es6666</div>
+
+    <!--双向绑定-->
+    <div>
+      <div>简单双向绑定</div>
+      <input id="modelWrite" type="text" >
+      <span id="modelView"></span>
+    </div>
   </div>
 </template>
-<script>
+<script type="text/javascript">
   /**
    * export/import基本用法
    * */
@@ -63,6 +70,69 @@
 
     }
   }
+  /**
+   * vue双向绑定原理
+   */
+  console.log('----------------------vue双向绑定原理---------------------------------');
+  let obj = {} //为obj定义一个为 hello 的访问器属性
+  //访问器属性
+  Object.defineProperty(obj,"hello",{
+      get(){
+          console.log('调用了get')
+      },
+      set(val){
+          console.log('set调用了，值为'+val+'');
+      }
+  })
+  console.log(76,obj.hello)//会进get
+  console.log(77,obj.hello = '666') //会进set
+  console.log('-----------------------')
+  //get 和 set 方法内部的 this 都指向 obj，
+  // 这意味着 get 和 set 函数可以操作对象内部的值。
+  // 另外，访问器属性的会"覆盖"同名的普通属性，因为访问器属性会被优先访问，
+  // 与其同名的普通属性则会被忽略。
+  Object.defineProperty(obj,"test",{
+      set(val){
+          document.querySelector('#modelWrite').value = val;
+          document.querySelector('#modelView').innerText = val;
+      }
+  })
+   document.addEventListener('keyup',function (e) {
+       //obj.test = document.querySelector('#modelWrite').value;
+       obj.test = document.querySelector('#modelWrite').value
+       /*console.log(101,e.target.value)
+       console.log(102,document.querySelector('#modelWrite').value);*/
+   })
+  //递归
+  //求1-100的和
+  /*let sum = 0,num = 100;
+  let recursive = (num)=>{
+      if(num === 0)
+          return false;
+      console.log(110,sum += num);
+      recursive(num-1);
+  }
+  recursive(100);*/
+  //闭包理解
+  //调用方法A的时候，会把a这个变量给存下来
+
+  /*let  A = (a)=>{
+      let B = (b)=>{
+          console.log(127,a+b);
+          return a + b;
+      }
+      return B
+  }
+  let C = A(1);
+  C(1)*/
+  //console.log(126,C);
+  var a = 10;
+  function A(){
+      console.log(a);//10（读的能力）
+      a = 20;//（写的能力）
+      console.log(a);//20
+  }
+  A();
 </script>
 <style scope type="text/scss" lang="scss" >
   @import "../../assets/scss/style";

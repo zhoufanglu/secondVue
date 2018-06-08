@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="a">
+        <span id="b"></span>
+    </div>
+    <script>
+        let nodeToFragment = (node)=>{
+            let flag = document.createDocumentFragment();//一个文档片段
+            let child;
+            console.log(17,flag,node.firstChild);
+            while(child = node.firstChild){
+                flag.appendChild(child);
+            }
+            return flag;
+        }
+        let dom = nodeToFragment(document.querySelector('#app'));
+        document.querySelector('#app').appendChild(dom);
+    </script>
+</body>
+</html>
