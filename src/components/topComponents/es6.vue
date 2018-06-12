@@ -103,6 +103,7 @@
        /*console.log(101,e.target.value)
        console.log(102,document.querySelector('#modelWrite').value);*/
    })
+
   //递归
   //求1-100的和
   /*let sum = 0,num = 100;
@@ -126,13 +127,44 @@
   let C = A(1);
   C(1)*/
   //console.log(126,C);
-  var a = 10;
+  /*var a = 10;
   function A(){
       console.log(a);//10（读的能力）
       a = 20;//（写的能力）
       console.log(a);//20
   }
-  A();
+  A();*/
+
+  let arr =  [1,2,2,4,7,8,2,1];
+  //console.log(139,...new Set(arr) )
+  console.log(139,arr.sort((a,b)=>{
+      return a<b;
+  }));
+  arr = arr.sort((a,b)=>{
+      return a<b;
+  })
+  let i,j,k
+  // 执行前[8, 7, 4, 2, 2, 2, 1, 1]
+  for (i = 0; i < arr.length - 1; i++) {
+     /* for(j = i+1; j<arr.length; j++){
+          if(arr[i] === arr[j]){
+              for(k = i;k<arr.length;k++){
+                  arr[k] = arr[k+1]
+              }
+              arr.length--;
+          }
+      }*/
+      if (arr[i] === arr[i + 1]) {
+          for (j = i; j < arr.length; j++) {
+              arr[j] = arr[j + 1];
+          }
+          arr.length--;
+      }
+  }
+  //执行后 [8, 7, 4, 2, 2, 1]
+  console.log(152,arr)
+
+
 </script>
 <style scope type="text/scss" lang="scss" >
   @import "../../assets/scss/style";
